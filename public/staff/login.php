@@ -13,6 +13,21 @@ $password = '';
 
 if(is_post_request()) {
 
+  if(!csrf_token_is_valid()){
+    $errors[] = "Request is not valid.";
+    redirect_to("../index.php");
+  }
+
+  if(!csrf_token_is_recent()){
+    $errors[] = "Request timeout.";
+    redirect_to("../index.php");
+  }
+
+  if(!request_is_same_domain()){
+    $errors[] = "Request is not valid.";
+    redirect_to("../index.php");
+  }
+
   // Confirm that values are present before accessing them.
   if(isset($_POST['username'])) { $username = $_POST['username']; }
   if(isset($_POST['password'])) { $password = $_POST['password']; }
@@ -68,6 +83,7 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="login.php" method="post">
+    <?php echo csrf_token_tag(); ?>
     Username:<br />
     <input type="text" name="username" value="<?php echo $username; ?>" /><br />
     Password:<br />

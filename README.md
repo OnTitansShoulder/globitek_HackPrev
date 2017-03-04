@@ -39,11 +39,11 @@ The following **required** functionality is completed:
   * [x]  Required: If tokens do not match, show an error message.
   * [x]  Required: Make sure that a logged-in user can use pages as expected.
 
-7\. [ ]  Required: Ensure the application is not vulnerable to XSS attacks.
+7\. [x]  Required: Ensure the application is not vulnerable to XSS attacks.
 
-8\. [ ]  Required: Ensure the application is not vulnerable to SQL Injection attacks.
+8\. [x]  Required: Ensure the application is not vulnerable to SQL Injection attacks.
 
-9\. [ ]  Required: Run all tests from Objective 1 again and confirm that your application is no longer vulnerable to any test.
+9\. [x]  Required: Run all tests from Objective 1 again and confirm that your application is no longer vulnerable to any test.
 
 
 The following advanced user stories are optional:
@@ -54,7 +54,7 @@ The following advanced user stories are optional:
 
 * [x] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
 
-* [ ]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
+* [x]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
 
 * [x]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
 
